@@ -10,7 +10,7 @@
 </engines>
 
     <js-module src="www/logcat.js" name="LogCat">
-    <clobbers target="plugin.logcat" />
+    <clobbers target="log" />
   </js-module>
 
   <!-- android -->

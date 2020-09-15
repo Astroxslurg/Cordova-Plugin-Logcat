@@ -6,29 +6,17 @@ import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
 import org.json.JSONException;
 import android.os.Environment;
-
+import android.util.Log;
 
 public class LogCat extends CordovaPlugin {
-	protected void pluginInitialize() {
-	  }
+	protected void pluginInitialize() {}
 
-	  public boolean execute(String action, JSONArray args, CallbackContext callbackContext) 
-	      throws JSONException {
-	    if (action.equals("sendLogs")) {
-                        // save logcat in file
-                File outputFile = new File(Environment.getExternalStorageDirectory(),
-                        "logcat.txt");
-                try {
-                    Runtime.getRuntime().exec(
-                            "logcat -f " + outputFile.getAbsolutePath());
-                } catch (IOException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-             return true;
-	    }
-          else{        
-	    return false;
-	  }
-      }
+  public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+    if (action.equals("log")) {
+      Log.d("cordova", args.getString(0));
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

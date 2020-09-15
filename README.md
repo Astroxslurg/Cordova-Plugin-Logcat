@@ -2,7 +2,7 @@
 A Cordova plugin to generate catlog file to share with developer
 
 #Installing
-cordova plugin add https://github.com/Murthy582/Cordova-Logcat.git
+cordova plugin add https://github.com/Astroxslurg/Cordova-Plugin-Logcat.git
 
 #Usage
 plugin.logcat.sendLogs()
